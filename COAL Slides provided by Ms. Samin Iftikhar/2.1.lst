@@ -1,0 +1,30 @@
+     1                                  ; To start a comment a semicolon is used
+     2                                  ; the assembler ignores everything else on the same line.
+     3                                  ; this program adds three numbers in registers
+     4                                  
+     5                                  [org 0x0100]	;we will see org directive later
+     6                                  
+     7 00000000 B80500                  mov ax, 5	; AX = 5
+     8 00000003 BB0A00                  mov bx, 10	; BX = 10
+     9 00000006 01D8                    add ax, bx	; AX = AX + BX
+    10 00000008 BB0F00                  mov bx, 15	; BX = 15
+    11 0000000B 01D8                    add ax, bx	; AX = AX + BX
+    12                                  
+    13 0000000D B8004C                  mov ax, 0x4c00	;terminate the program
+    14 00000010 CD21                    int 0x21
+    15                                  
+    16                                  ; The ending lines are related more to the operating system than to
+    17                                  ; assembly language programming. It is a way to inform DOS that our
+    18                                  ; program has terminated so it can display its command prompt
+    19                                  ; again. The computer may reboot or behave improperly if this
+    20                                  ; termination is not present.
+    21                                  
+    22                                  ; Lecture Topics:
+    23                                  ; 1. Instructions Addresses
+    24                                  ; 2. Inst. Opcodes
+    25                                  ; 3. Little Endian VS Big Endian
+    26                                  ; 4. Size of COM file = 18Bytes
+    27                                  ; 5. Overview of AFD
+    28                                  ; 6. Registers
+    29                                  ; 7. Why is 1st instruction on 0x100
+    30                                  ; 8. Debug program and watch Registers
